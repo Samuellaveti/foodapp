@@ -1,0 +1,15 @@
+.food-card button:hover {
+  background-color: #218838;
+}
+
+.cart-item button {
+  background: none;
+  color: red;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  color: darkred;
+}
