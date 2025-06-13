@@ -3,178 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Foodie Express - Food Delivery App</title>
-  <link rel="stylesheet" href="styles.css" /> <!-- Add your CSS here -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Food Order App</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #fffefb;
+      background-color: #fefefe;
     }
-
     header {
-      background-color: #ff5e57;
+      background: #ff6347;
       color: white;
-      padding: 20px 0;
+      padding: 1rem;
       text-align: center;
+      font-size: 1.5rem;
     }
-
-    nav {
+    .container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 40px;
-    }
-
-    nav .logo {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li {
-      display: inline;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 50px;
-      background-color: #ffeaa7;
-    }
-
-    .hero-text {
-      max-width: 50%;
-    }
-
-    .hero-text h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      font-size: 1.2em;
-    }
-
-    .hero img {
-      max-width: 40%;
-      border-radius: 10px;
-    }
-
-    .section {
-      padding: 60px 40px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .food-items {
-      display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 30px;
+      padding: 1rem;
+      gap: 1rem;
     }
-
     .food-card {
       width: 250px;
-      background: #fff;
+      border: 1px solid #ddd;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-
     .food-card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
     }
-
-    .food-card h3 {
-      margin: 10px;
+    .food-card .info {
+      padding: 0.5rem;
     }
-
-    .food-card p {
-      padding: 0 10px 10px;
-      color: #333;
+    .food-card h4 {
+      margin: 0.5rem 0;
     }
-
-    .about {
-      background-color: #f7f1e3;
-    }
-
-    footer {
-      background-color: #2f3542;
+    .food-card button {
+      padding: 0.5rem 1rem;
+      background-color: #28a745;
+      border: none;
       color: white;
-      text-align: center;
-      padding: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 300px;
+      height: 100%;
+      background: white;
+      box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    .cart h2 {
+      margin-top: 0;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+    }
+    .cart-total {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .cart {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">FoodieExpress</div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Order</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Delicious Food Delivered to You</h1>
-      <p>Order from your favorite restaurants and get it delivered fast and fresh!</p>
-    </div>
-    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Food Delivery">
-  </section>
+  <header>🍕 Food Order App</header>
 
-  <section class="section">
-    <h2>Featured Dishes</h2>
-    <div class="food-items">
-      <div class="food-card">
-        <img src="https://images.unsplash.com/photo-1604909052434-868c8f0eeef1?auto=format&fit=crop&w=600&q=60" alt="Burger">
-        <h3>Cheesy Burger</h3>
-        <p>Juicy beef patty with cheese, lettuce, and tomato in a toasted bun.</p>
-      </div>
-      <div class="food-card">
-        <img src="https://images.unsplash.com/photo-1594007654729-cba1de3c9f4d?auto=format&fit=crop&w=600&q=60" alt="Pizza">
-        <h3>Margherita Pizza</h3>
-        <p>Classic pizza with fresh mozzarella, basil, and tomato sauce.</p>
-      </div>
-      <div class="food-card">
-        <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=600&q=60" alt="Sushi">
-        <h3>Fresh Sushi</h3>
-        <p>Assorted sushi rolls made with fresh seafood and vegetables.</p>
-      </div>
-    </div>
-  </section>
+  <div class="container" id="food-list">
+    <!-- Food items will be added here dynamically -->
+  </div>
 
-  <section class="section about">
-    <h2>About Us</h2>
-    <p>At FoodieExpress, we're passionate about connecting people with their favorite meals. We partner with top local restaurants to ensure fast, reliable, and tasty delivery every time.</p>
-  </section>
+  <div class="cart" id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-total">Total: $<span id="total">0.00</span></div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 FoodieExpress. All rights reserved.</p>
-  </footer>
+  <script>
+    const foodItems = [
+      { id: 1, name: 'Burger', price: 5.99, image: 'https://source.unsplash.com/400x300/?burger' },
+      { id: 2, name: 'Pizza', price: 8.99, image: 'https://source.unsplash.com/400x300/?pizza' },
+      { id: 3, name: 'Pasta', price: 6.49, image: 'https://source.unsplash.com/400x300/?pasta' },
+      { id: 4, name: 'Fries', price: 2.99, image: 'https://source.unsplash.com/400x300/?fries' },
+      { id: 5, name: 'Sushi', price: 10.99, image: 'https://source.unsplash.com/400x300/?sushi' },
+    ];
+
+    const cart = [];
+
+    function displayFoodItems() {
+      const foodList = document.getElementById('food-list');
+      foodItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'food-card';
+        card.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="info">
+            <h4>${item.name}</h4>
+            <p>$${item.price.toFixed(2)}</p>
+            <button onclick="addToCart(${item.id})">Add to Cart</button>
+          </div>
+        `;
+        foodList.appendChild(card);
+      });
+    }
+
+    function addToCart(id) {
+      const item = foodItems.find(i => i.id === id);
+      cart.push(item);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          ${item.name} - $${item.price.toFixed(2)}
+          <button onclick="removeFromCart(${index})">✖</button>
+        `;
+        cartItemsDiv.appendChild(div);
+      });
+      document.getElementById('total').innerText = total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    window.onload = displayFoodItems;
+  </script>
+
 </body>
 </html>
