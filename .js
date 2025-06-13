@@ -7,3 +7,6 @@ function checkout() {
   cart.length = 0; // Clear the cart
   updateCart();
 }
+window.addEventListener("DOMContentLoaded", () => {
+  displayFoodItems();
+});
